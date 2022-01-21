@@ -1,8 +1,18 @@
+nav{
+    margin: 10px 10px 10px 10px;
+    
+}
+
 .logo {
     float: left;
     width: 10%;
     margin-left: 5%;
-    
+    margin-top: -1%;   
+}
+
+.logoCarrito {
+    width: 50px;
+    margin: 40px 40px 40px 40px;
 }
 
 li{
@@ -11,7 +21,7 @@ li{
 
 .menu{
     width: 60%;
-    float: right;
+    float: left;
     text-align: center;
 }
 
