@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import swal from 'sweetalert';
+import ItemDetailContainer from "../itemDetail/itemDetailContainer";
 
 
 const ControlesDeLaCard = ({stock}) =>  {
@@ -24,6 +25,7 @@ const ControlesDeLaCard = ({stock}) =>  {
             setcantMin (cantMin +1);
         }
     }
+
     
     return (
             <div>
@@ -31,6 +33,7 @@ const ControlesDeLaCard = ({stock}) =>  {
                 <p className="card-text">Cantidad Minima:{cantMin} <button className="btn btn-primary" onClick={restarCompra}>-</button></p>
                 <p className="card-text">Agregar una Prenda mas :{onAdd} <button className="btn btn-primary" onClick={agregarCompra}> + </button></p>
                 <button className="btn btn-primary">Agregar al Carrito</button>
+                <button className="btn btn-primary" >Informacion del Producto</button>
                 <button type="button" className="btn btn-primary">Compra</button>
             </div>
     )

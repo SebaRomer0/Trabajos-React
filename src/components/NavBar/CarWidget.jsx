@@ -13,3 +13,8 @@ export default {
     "pant2" : pantalon2,
     "cargando" : loading
 }
+
+export  const IconoCard = () => {
+    return (
+        <img className='logoCarrito' src={carritoDeCompra} alt="carrito de compra" />    )
+}

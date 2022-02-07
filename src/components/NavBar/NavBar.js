@@ -1,6 +1,5 @@
 import logo007 from './imagen/logo007.png'
-// import carritoDeCompra from './imagen/cart-solid-24.png'
-import CarWidget from './CarWidget'
+import CarWidget, { IconoCard, iconoCard } from './CarWidget'
 
 
 function NavBar() {
@@ -15,7 +14,7 @@ function NavBar() {
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
-            <img className='logoCarrito' src={CarWidget.carrito} alt="carrito de compra" />
+            <IconoCard />
         </nav>
         ) 
     }

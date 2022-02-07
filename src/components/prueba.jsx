@@ -13,3 +13,33 @@ const Item =({product}) => {
 };
 
 export default Item;
+
+            {/* <div className='row justify-content-center img-fluid'>
+              {cargando ? (
+                <img src={CarWidget.cargando} />
+              ) : (
+                products.map((map) => {
+                return <ListaCard key={map.id} pruebaCard={map}/>})
+              )}
+            </div> */}
+
+
+            // function mostrarProductos() {
+  //   return new Promise ((resolve,reject)=>{
+  //     setTimeout(()=> resolve(BaseDeDatos), 6000);
+  //   })
+  // }
+
+
+  // useEffect(() => {
+  //   setCargando(true)
+  //     mostrarProductos()
+  //       .then((data) => setProducts(data))
+  //       .catch((error) => console.error(error))
+  //       .finally (() => setCargando(false));
+  //   }, []);
+
+  // const myTimeout = setTimeout(mostrarProductos, 8000);
+
+
+

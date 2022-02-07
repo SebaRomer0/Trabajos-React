@@ -1,7 +1,7 @@
-import CarWidget from "./NavBar/CarWidget";
+import CarWidget from "../NavBar/CarWidget";
 
 
-export  const Productos =[
+const BaseDeDatos =[
     {
         id:0,
         img: CarWidget.cam1,
@@ -32,9 +32,4 @@ export  const Productos =[
     },
 ];
 
-
-export default function mostrarProductos() {
-    return new Promise ((resolve,reject)=>{
-        setTimeout(()=> resolve(Productos), 6000);
-    })
-}
+export default BaseDeDatos;

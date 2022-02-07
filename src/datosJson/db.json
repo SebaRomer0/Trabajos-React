@@ -1,0 +1,36 @@
+{
+
+    "BaseDeDatos" : 
+    [
+        {
+            "id":0,
+            "nombre":"Camisa 1",
+            "precio": "3000$",
+            "stock": 5,
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago"
+        },
+        {
+            "id":1,
+            "nombre":"Camisa 2",
+            "precio" : "3500$",
+            "stock": 7,
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago"
+
+        },
+        {
+            "id":2,
+            "nombre":"Pantalon 3",
+            "precio": "5000$",
+            "stock": 8,
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago"
+
+        },
+        {
+            "id":3,
+            "nombre":"Pantalon 4",
+            "precio": "7500$",
+            "stock": 6,
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago"
+        }
+    ]
+}
