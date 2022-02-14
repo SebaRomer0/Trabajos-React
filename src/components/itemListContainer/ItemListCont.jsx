@@ -23,7 +23,11 @@ return(
         <>
           {cargando
                     ? (<img src={CarWidget.cargando} />)
-                    : (<ItemList items={products} />)
+                    : <div className="container-fluid">
+                          <div className="row d-flex justify-content-center">
+                            <ItemList items={products} />
+                          </div>
+                      </div> 
           }
         </>
 

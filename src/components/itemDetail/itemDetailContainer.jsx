@@ -1,36 +1,32 @@
 import CarWidget from "../NavBar/CarWidget";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import ItemDetail from "./itemDetail";
-
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    
-const URL = "http://localhost:3001/BaseDeDatos";
-const [products, setProducts] = useState([]);
-const [cargando, setCargando] = useState(false);
+  const { productoId } = useParams();
 
-useEffect(() => {
-setCargando(true);
-fetch(URL)
-    .then((reponse) => reponse.json())
-    .then((json) => setProducts(json))
-    .catch((error) => console.error(error))
-    .finally(() => setCargando(false));
-}, []);
+  const [products, setProducts] = useState([]);
+  const [cargando, setCargando] = useState(false);
 
-console.log(products)
+  useEffect(() => {
+    const URL = `http://localhost:3001/BaseDeDatos/${productoId}`;
+    setCargando(true);
+    fetch(URL)
+      .then((reponse) => reponse.json())
+      .then((json) => setProducts(json))
+      .catch((error) => console.error(error))
+      .finally(() => setCargando(false));
+  }, [productoId]);
 
-return (
-<>
-    {cargando ? (
-    <img src={CarWidget.cargando} />
-    ) : (
-    <div className="row">
-            {products.map((prod) => <ItemDetail detalle={prod}/>)}
-    </div>
-    )}
-</>
-);
+  if (products) {
+    return (
+      <div>
+        <ItemDetail detalle={products}/>
+      </div>
+    );
+  }
 };
 
 export default ItemDetailContainer;

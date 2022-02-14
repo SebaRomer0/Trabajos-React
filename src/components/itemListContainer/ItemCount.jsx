@@ -8,6 +8,7 @@ const ControlesDeLaCard = ({stock}) =>  {
     const [cantMin,setcantMin] = useState(1);
     const [onAdd,setonAdd] = useState (1);
 
+
     const restarCompra =() => { 
         if (cantMin === 1){
             swal ('La Compra minima es una Prenda')           
@@ -33,7 +34,6 @@ const ControlesDeLaCard = ({stock}) =>  {
                 <p className="card-text">Cantidad Minima:{cantMin} <button className="btn btn-primary" onClick={restarCompra}>-</button></p>
                 <p className="card-text">Agregar una Prenda mas :{onAdd} <button className="btn btn-primary" onClick={agregarCompra}> + </button></p>
                 <button className="btn btn-primary">Agregar al Carrito</button>
-                <button className="btn btn-primary" >Informacion del Producto</button>
                 <button type="button" className="btn btn-primary">Compra</button>
             </div>
     )
