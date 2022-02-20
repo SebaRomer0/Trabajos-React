@@ -1,42 +1,53 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import swal from 'sweetalert';
-import ItemDetailContainer from "../itemDetail/itemDetailContainer";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
+const ControlesDeLaCard = ({ stock }) => {
+  const [cantMin, setcantMin] = useState(1);
+  const [onAdd, setonAdd] = useState(1);
+  const [count, setCount] = useState(1);
 
-const ControlesDeLaCard = ({stock}) =>  {
-    const [cantMin,setcantMin] = useState(1);
-    const [onAdd,setonAdd] = useState (1);
+  const restarCompra = () => {
 
-
-    const restarCompra =() => { 
-        if (cantMin === 1){
-            swal ('La Compra minima es una Prenda')           
-        }else {
-            setcantMin(cantMin - 1)
-            setonAdd(onAdd - 1)
-        }
-    };
-    
-    const agregarCompra =() => {
-        if(cantMin === stock ){
-            swal ('Llegaste a la cantidad de Prenda que tenemos Stock')
-        }else{
-            setonAdd (onAdd + 1);
-            setcantMin (cantMin +1);
-        }
+    if (cantMin === 1) {
+      swal("La Compra minima es una Prenda");
+    } else {
+      setcantMin((cantMin) => cantMin - 1);
+      setonAdd((onAdd) => onAdd - 1);
+      setCount((count) => count - 1);
     }
+  };
 
-    
-    return (
-            <div>
-                <p className="card-text">Stock: {stock}</p>
-                <p className="card-text">Cantidad Minima:{cantMin} <button className="btn btn-primary" onClick={restarCompra}>-</button></p>
-                <p className="card-text">Agregar una Prenda mas :{onAdd} <button className="btn btn-primary" onClick={agregarCompra}> + </button></p>
-                <button className="btn btn-primary">Agregar al Carrito</button>
-                <button type="button" className="btn btn-primary">Compra</button>
-            </div>
-    )
+  const agregarCompra = () => {
+    if (cantMin === stock) {
+      swal("Llegaste a la cantidad de Prenda que tenemos Stock");
+    } else {
+      setonAdd((onAdd) => onAdd + 1);
+      setcantMin((cantMin) => cantMin + 1);
+      setCount((count) => count + 1);
+    }
+  };
+
+  const contador = () => {
+    swal("Perfecto. Tenes en tu Carrito de Compra : " + count);
+  };
+  
+  return (
+    <div>
+      <p className="card-text">Stock: {stock}</p>
+      <p>
+        <button className="btn btn-primary" onClick={restarCompra}>
+          -
+        </button>{" "}
+        {(cantMin, onAdd)}{" "}
+        <button className="btn btn-primary" onClick={agregarCompra}>
+          +
+        </button>
+      </p>
+      <button className="btn btn-primary" onClick={contador}>Agregar al Carrito</button>
+    </div>
+  );
 };
 
 export default ControlesDeLaCard;
