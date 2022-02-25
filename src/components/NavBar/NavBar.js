@@ -13,7 +13,7 @@ function NavBar() {
                     <li><Link to="/producto">Indumentaria Masculina</Link></li>
                 </ul>
             </div>
-            <IconoCard />
+            <li><Link to="/producto/cart"> <IconoCard /></Link></li>          
         </nav>
         ) 
     }

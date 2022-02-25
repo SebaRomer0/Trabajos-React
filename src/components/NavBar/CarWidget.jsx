@@ -1,8 +1,8 @@
 import carritoDeCompra from './imagen/cart-solid-24.png';
-import camisa1 from './imagen/camisa1.jpeg';
-import camisa2 from './imagen/camisa2.jpeg';
-import pantalon1 from './imagen/pantalon1.jpg';
-import pantalon2 from './imagen/pantalon2.jpg';
+import camisa1 from './imagen/indumentaria Masculina/camisa1.jpeg';
+import camisa2 from './imagen/indumentaria Masculina/camisa2.jpeg';
+import pantalon1 from './imagen/indumentaria Masculina/pantalon1.jpg';
+import pantalon2 from './imagen/indumentaria Masculina/pantalon2.jpg';
 import loading from './imagen/loading.gif';
 import hombrePaginaPrincipal from './imagen/hombre.jpg'
 

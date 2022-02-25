@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
+import { CartContext } from "../../context/CartContext";
 
-const ControlesDeLaCard = ({ stock }) => {
+const ControlesDeLaCard = ({ stock, productos }) => {
   const [cantMin, setcantMin] = useState(1);
   const [onAdd, setonAdd] = useState(1);
   const [count, setCount] = useState(1);
+ 
+  const { addItem } = useContext(CartContext)  
+
 
   const restarCompra = () => {
 
@@ -31,6 +34,9 @@ const ControlesDeLaCard = ({ stock }) => {
 
   const contador = () => {
     swal("Perfecto. Tenes en tu Carrito de Compra : " + count);
+    addItem(productos, count)
+
+
   };
   
   return (

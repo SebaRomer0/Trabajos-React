@@ -7,14 +7,16 @@
             "nombre":"Camisa Gould",
             "precio": "3000$",
             "stock": 5,
-            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago.Cuenta con un Gran Calse al cuerpo y textura"
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago.Cuenta con un Gran Calse al cuerpo y textura",
+            "img":"camisa1.jpeg"
         },
         {
             "id":1,
             "nombre":"Camisa Deira",
             "precio" : "3500$",
             "stock": 7,
-            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago.Cuentas con un cuello italiano Clasico y Formal.Donde tambien puede emplearse con una Corbata"
+            "descripcion" : "Es un excelente producto de un gran Algodon 100%. Tenemos todos los talles y todas las formas de pago.Cuentas con un cuello italiano Clasico y Formal.Donde tambien puede emplearse con una Corbata",
+            "img":"camisa2.jpeg"
 
         },
         {
@@ -22,7 +24,8 @@
             "nombre":"Jogger Nixon",
             "precio": "5000$",
             "stock": 8,
-            "descripcion" : "De un material Elastizado. Donde la cintura cuenta con una apertura de unos 7cm."
+            "descripcion" : "De un material Elastizado. Donde la cintura cuenta con una apertura de unos 7cm.",
+            "img":"pantalon1.jpg"
 
         },
         {
@@ -30,7 +33,8 @@
             "nombre":"Jean Sidney",
             "precio": "7500$",
             "stock": 6,
-            "descripcion" : "Calidad de Tela Vaquera con indices de la mas alta Calidad. Donde la cintura cuenta con una apertura de unos 7cm"
+            "descripcion" : "Calidad de Tela Vaquera con indices de la mas alta Calidad. Donde la cintura cuenta con una apertura de unos 7cm",
+            "img":"pantalon2.jpg"
         }
     ]
 }

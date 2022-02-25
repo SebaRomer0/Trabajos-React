@@ -7,22 +7,27 @@ import ItemDetailContainer from "./components/itemDetail/itemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./components/itemListContainer/homePage";
 import TerminarCompra from "./components/itemDetail/terminarCompra";
+import ErrorPagina from "./components/itemListContainer/errorPagina";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/">
-          <Route index element={<HomePage />} />
-          <Route path="producto">
-            <Route index element={<MuestraDeLaCard />} />
-            <Route path=":productoId" element={<ItemDetailContainer />} />
-            <Route path="cart" element={<TerminarCompra />} />
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/">
+            <Route index element={<HomePage />} />
+            <Route path="producto">
+              <Route index element={<MuestraDeLaCard />} />
+              <Route path=":productoId" element={<ItemDetailContainer />} />
+              <Route path="cart" element={<TerminarCompra />} />
+            </Route>
+            <Route path="*" element={<ErrorPagina />} />
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
