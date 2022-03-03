@@ -6,9 +6,10 @@ import MuestraDeLaCard from "./components/itemListContainer/ItemListCont";
 import ItemDetailContainer from "./components/itemDetail/itemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./components/itemListContainer/homePage";
-import TerminarCompra from "./components/itemDetail/terminarCompra";
+import TerminarCompra from "./components/itemDetail/cart";
 import ErrorPagina from "./components/itemListContainer/errorPagina";
 import { CartProvider } from "./context/CartContext";
+import Cart from "./components/itemDetail/cart";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path="producto">
               <Route index element={<MuestraDeLaCard />} />
               <Route path=":productoId" element={<ItemDetailContainer />} />
-              <Route path="cart" element={<TerminarCompra />} />
+              <Route path="cart" element={<Cart />} />
             </Route>
             <Route path="*" element={<ErrorPagina />} />
           </Route>

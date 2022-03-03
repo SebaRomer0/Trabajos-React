@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
-const TerminarCompra = () => {
-  const { cart, removeItem, clear } = useCart();
+const Cart = () => {
+  const { cart, removeItem, clear, newStock } = useCart();
 
   let irHome = useNavigate();
   let irProduct = useNavigate();
@@ -15,6 +15,8 @@ const TerminarCompra = () => {
   const product = () => {
     irProduct("/producto");
   };
+  
+  let totalPrecio = 0;
 
   return (
     <div>
@@ -26,8 +28,10 @@ const TerminarCompra = () => {
                 {cart.map((result) => {
                     return (
                         <div key={result.item.id}>
-                            <h5>{result.item.nombre}</h5>
-                            <p>{result.quantity}</p>
+                            <h5>Nombre: {result.item.nombre}</h5>
+                            <p>Cantidad Comprada: {result.quantity}</p>
+                            <p>Stock disponible todavia: {result.item.stock}</p>
+                            <p>Precio total: {totalPrecio += result.quantity * result.item.precio}</p>
                             <button className="btn btn-primary m-3" onClick={()=>removeItem (result.item.id)}>Borrar Producto</button>
                             <button className="btn btn-primary m-3" onClick={clear}>Borrar Todo</button>
                         </div>
@@ -47,4 +51,4 @@ const TerminarCompra = () => {
   );
 };
 
-export default TerminarCompra;
+export default Cart;
