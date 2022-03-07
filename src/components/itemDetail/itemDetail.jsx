@@ -4,12 +4,11 @@ import ControlesDeLaCard from "../itemListContainer/ItemCount";
 const ItemDetail = ({ detalle }) => {
   let irHome = useNavigate();
 
+  let compraTerminada = useNavigate();
 
   const product = () => {
     irHome("/producto");
   };
-
-  let compraTerminada = useNavigate();
 
   const irCompraTerminada = () => {
     compraTerminada ("/producto/cart");
@@ -25,7 +24,7 @@ const ItemDetail = ({ detalle }) => {
             <h4>Precio: {detalle.precio}</h4>
             <p>Descripcion: {detalle.descripcion}</p>
             <h4><ControlesDeLaCard stock={detalle.stock} productos={detalle} buy={detalle.precio}/></h4>
-            <button className="btn btn-primary btn-lg py-4 m-3" onClick={irCompraTerminada}>Terminar Compra</button>
+            <button className="btn btn-primary btn-lg py-4 m-3" onClick={irCompraTerminada}>Ir al Carrito</button>
           </div>
           <div>
             <button onClick={product} className="btn btn-info btn-lg">

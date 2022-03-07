@@ -1,37 +1,75 @@
-import CarWidget from "../NavBar/CarWidget"
-import React, { useEffect, useState } from 'react';
+import CarWidget from "../NavBar/CarWidget";
+import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import BaseDeDatos from "../baseDeDatos/BaseDeDatos.jsx";
+import { getFirestore } from "../../firebase";
+import { useParams } from "react-router-dom";
+import BaseDeDatos from "../baseDeDatos/BaseDeDatos";
 
 const MuestraDeLaCard = () => {
+  const { categoryId } = useParams();
 
-  const URL = "http://localhost:3001/BaseDeDatos";
-  const [products,setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [cargando, setCargando] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const db = getFirestore();
+  const collection = db.collection("productos");
+
+  
+  // // Agregado de BaseDeDatos
+  // const crearFirebase = ()=>{
+  //   BaseDeDatos.forEach((productos)=>{
+  //     collection
+  //     .add(productos)
+  //     .then((res)=> console.log("Producto Agregado",res.id))
+  //     .catch((err)=> console.log("Se rompio", err))
+  //   })
+  // }
 
 
   useEffect(() => {
-    setCargando(true)
-      fetch(URL)
-        .then((reponse) => reponse.json())
-        .then((data) => setProducts(data))
-        .catch((error) => console.error(error))
-        .finally (() => setCargando(false));
-    }, []);
 
-return(
-        <>
-          {cargando
-                    ? (<img src={CarWidget.cargando} />)
-                    : <div className="container-fluid">
-                          <div className="row d-flex justify-content-center">
-                            <ItemList items={products} />
-                          </div>
-                      </div> 
-          }
-        </>
+    let productsCollection;
 
-    )
-}
+    if (categoryId) {
+      productsCollection = db
+        .collection("productos")
+        .where("elementId", "==", Number(categoryId));
+    } else {
+      productsCollection = db.collection("productos");
+    }
+
+    const getDataFromFirestore = async () => {
+      setCargando(true);
+      try {
+        const response = await productsCollection.get();
+        if (response.empty) console.log("No hay Productos");
+        setProducts(
+          response.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        );
+      } catch (err) {
+        setError(err);
+      } finally {
+        setCargando(false);
+      }
+    };
+    getDataFromFirestore();
+    
+  }, [categoryId]);
+
+  return (
+    <>
+      {cargando ? (
+        <img src={CarWidget.cargando} />
+      ) : (
+        <div className="container-fluid">
+          <div className="row d-flex justify-content-center">
+            <ItemList items={products} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default MuestraDeLaCard;

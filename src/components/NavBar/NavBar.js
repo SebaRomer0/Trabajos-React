@@ -10,7 +10,9 @@ function NavBar() {
             <div className='menu' >
                 <ul>
                     <li><Link to="/">Inicio</Link></li>
-                    <li><Link to="/producto">Indumentaria Masculina</Link></li>
+                    <li><Link to="/producto">All Productos</Link></li>
+                    <li><Link to="/producto/categoria/1">Indumentaria Masculina</Link></li>
+                    <li><Link to="/producto/categoria/2">Indumentaria Femenina</Link></li>
                 </ul>
             </div>
             <li><Link to="/producto/cart"> <IconoCard /></Link></li>          

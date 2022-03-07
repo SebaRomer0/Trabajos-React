@@ -12,7 +12,7 @@ const ControlesDeLaCard = ({ stock, productos }) => {
   console.log(stock);
   console.log(stockPrenda);
 
-  const { addItem , newStock } = useContext(CartContext);
+  const { addItem , newStock , totalPrice} = useContext(CartContext);
 
   const restarCompra = () => {
     if (cantMin === 1) {
@@ -39,7 +39,8 @@ const ControlesDeLaCard = ({ stock, productos }) => {
   const contador = () => {
     swal("Perfecto. Tenes en tu Carrito de Compra : " + count);
     addItem(productos, count);
-    newStock(stockPrenda,productos);
+    newStock(stockPrenda);
+    // totalPrice(productos,count);
   };
 
   return (
