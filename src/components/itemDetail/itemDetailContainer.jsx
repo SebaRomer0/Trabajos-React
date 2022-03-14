@@ -25,14 +25,6 @@ const ItemDetailContainer = () => {
         setProducts({ ...response.data(), id: response.id });
       })
       .finally(() => setCargando(false));
-
-    // const URL = `http://localhost:3001/BaseDeDatos/${productoId}`;
-    // setCargando(true);
-    // fetch(URL)
-    //   .then((reponse) => reponse.json())
-    //   .then((json) => setProducts(json))
-    //   .catch((error) => console.error(error))
-    //   .finally(() => setCargando(false));
   }, [productoId]);
 
   if (products) {

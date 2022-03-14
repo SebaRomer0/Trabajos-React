@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { getFirestore } from "../../firebase";
 import { useParams } from "react-router-dom";
-import BaseDeDatos from "../baseDeDatos/BaseDeDatos";
+import "./itemListStyle.css";
+
 
 const MuestraDeLaCard = () => {
   const { categoryId } = useParams();
@@ -14,17 +15,6 @@ const MuestraDeLaCard = () => {
   
   const db = getFirestore();
   const collection = db.collection("productos");
-
-  
-  // // Agregado de BaseDeDatos
-  // const crearFirebase = ()=>{
-  //   BaseDeDatos.forEach((productos)=>{
-  //     collection
-  //     .add(productos)
-  //     .then((res)=> console.log("Producto Agregado",res.id))
-  //     .catch((err)=> console.log("Se rompio", err))
-  //   })
-  // }
 
 
   useEffect(() => {
@@ -60,9 +50,9 @@ const MuestraDeLaCard = () => {
   return (
     <>
       {cargando ? (
-        <img src={CarWidget.cargando} />
+        <img className="cargandoPagina" src={CarWidget.cargando} />
       ) : (
-        <div className="container-fluid">
+        <div className="container-fluid fondo">
           <div className="row d-flex justify-content-center">
             <ItemList items={products} />
           </div>

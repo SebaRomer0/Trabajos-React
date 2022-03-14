@@ -10,7 +10,8 @@ const ControlesDeLaCard = ({ stock, productos }) => {
   const [stockPrenda, setStockprenda] = useState();
 
   console.log(stock);
-  console.log(stockPrenda);
+  console.log(count);
+  // console.log(stockPrenda);
 
   const { addItem , newStock , totalPrice} = useContext(CartContext);
 
@@ -21,7 +22,7 @@ const ControlesDeLaCard = ({ stock, productos }) => {
       setcantMin((cantMin) => cantMin - 1);
       setonAdd((onAdd) => onAdd - 1);
       setCount((count) => count - 1);
-      setStockprenda((stockPrenda) => stockPrenda + 1);
+      // setStockprenda((stockPrenda) => stockPrenda); 
     }
   };
 
@@ -32,20 +33,25 @@ const ControlesDeLaCard = ({ stock, productos }) => {
       setonAdd((onAdd) => onAdd + 1);
       setcantMin((cantMin) => cantMin + 1);
       setCount((count) => count + 1);
-      setStockprenda((stockPrenda) => stock - (onAdd + 1));
+      // setStockprenda((stockPrenda) => stock );
+      // setStockprenda((stockPrenda) => stock - (onAdd + 1));
     }
   };
+
+  const totalDePrenda =()=>{
+    setStockprenda(count)
+    console.log("compraste" + [stockPrenda]);
+  }
 
   const contador = () => {
     swal("Perfecto. Tenes en tu Carrito de Compra : " + count);
     addItem(productos, count);
-    newStock(stockPrenda);
+    // newStock(stockPrenda);
     // totalPrice(productos,count);
   };
 
   return (
     <div>
-      <h4 className="card-text">Stock:{stock}</h4>
       <h5>
         <button className="btn btn-primary" onClick={restarCompra}>
           -
@@ -56,7 +62,7 @@ const ControlesDeLaCard = ({ stock, productos }) => {
         </button>
       </h5>
       <button className="btn btn-primary" onClick={contador}>
-        Agregar al Carrito
+        Agregar Productos
       </button>
     </div>
   );

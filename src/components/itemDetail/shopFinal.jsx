@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
+import "./itemDetailStyle.css"
+
 
 const ShopFinal = () => {
   const { ordenId } = useParams();
@@ -15,9 +17,10 @@ const ShopFinal = () => {
   }, [ordenId]);
 
   return (
-      <div>
+      <div className="fondo color__titulos text-center">
           <h1>Compra Finalizada</h1>
-          <h2>Gracias por su Compra:{orden.buyer.id} </h2>
+          <h2>Gracias por su Compra: ,{orden.buyer.name}, </h2>
+          <h2>Enviaremos todos sus Datos de la Compra a su Email ,{orden.buyer.email}, de la Ciudad de ,{orden.buyer.city},</h2>
       </div>
     
   );

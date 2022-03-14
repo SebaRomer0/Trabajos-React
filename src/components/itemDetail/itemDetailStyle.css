@@ -1,0 +1,22 @@
+.fondo{
+    background-image: url(../NavBar/imagen/hombre.jpg);
+    height: 150vh;
+}
+
+.logo {
+    float: center;
+    width: 28%;
+}
+
+.titulos__cart {
+    padding: 1%;
+    font-size: radial-gradient(blue, white);;
+    border-radius: 30px;
+    background-image: radial-gradient(blue, white);;
+    text-shadow: black 3px 3px;
+    color: white;
+}
+
+.color__titulos{
+    color: white;
+}

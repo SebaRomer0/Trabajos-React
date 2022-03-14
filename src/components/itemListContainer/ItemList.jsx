@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Item from "./Item";
+import "./itemListStyle.css";
 
 
 const ItemList =({items}) => {
@@ -13,7 +14,7 @@ const ItemList =({items}) => {
 
     return (
         <>
-            <h1 className="text-center">Eleji tu Mejor Ropa</h1>
+            <h1 className="text-center titulos__principales"><strong>Eleji tu Mejor Ropa</strong></h1>
             {items.map((prod) => <Item key={prod.id} producto={prod}/>)}
             <div className="d-flex justify-content-center">
                 <button onClick={home} className="btn btn-info btn-lg">Ir a pagina Principal</button>

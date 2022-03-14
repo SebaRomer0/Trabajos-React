@@ -1,0 +1,29 @@
+.cargandoPagina {
+  width: 100%;
+  height: 100vh;
+}
+
+.titulo__home__page{
+  color: white;
+}
+
+.titulos__principales {
+    padding: 1%;
+    font-size: radial-gradient(blue, white);;
+    border-radius: 30px;
+    background-image: radial-gradient(blue, white);;
+    text-shadow: black 3px 3px;
+    color: white;
+}
+
+.fondo{
+    background-image: url(../NavBar/imagen/hombre.jpg);
+    height: 100vh;
+}
+
+.error__imagen{
+  background-image: url(../NavBar/imagen/cavernicola.gif);
+  background-position: center;
+  height: 450px;
+  width: 100%;
+}

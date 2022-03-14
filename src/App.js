@@ -16,7 +16,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <NavBar />
+      <NavBar/>
         <Routes>
           <Route path="/">
             <Route index element={<HomePage />} />
