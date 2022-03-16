@@ -7,13 +7,11 @@ const ControlesDeLaCard = ({ stock, productos }) => {
   const [cantMin, setcantMin] = useState(0);
   const [onAdd, setonAdd] = useState(0);
   const [count, setCount] = useState(0);
-  const [stockPrenda, setStockprenda] = useState();
 
   console.log(stock);
   console.log(count);
-  // console.log(stockPrenda);
 
-  const { addItem , newStock , totalPrice} = useContext(CartContext);
+  const { addItem , totalPrice} = useContext(CartContext);
 
   const restarCompra = () => {
     if (cantMin === 1) {
@@ -22,7 +20,6 @@ const ControlesDeLaCard = ({ stock, productos }) => {
       setcantMin((cantMin) => cantMin - 1);
       setonAdd((onAdd) => onAdd - 1);
       setCount((count) => count - 1);
-      // setStockprenda((stockPrenda) => stockPrenda); 
     }
   };
 
@@ -33,21 +30,12 @@ const ControlesDeLaCard = ({ stock, productos }) => {
       setonAdd((onAdd) => onAdd + 1);
       setcantMin((cantMin) => cantMin + 1);
       setCount((count) => count + 1);
-      // setStockprenda((stockPrenda) => stock );
-      // setStockprenda((stockPrenda) => stock - (onAdd + 1));
     }
   };
-
-  const totalDePrenda =()=>{
-    setStockprenda(count)
-    console.log("compraste" + [stockPrenda]);
-  }
 
   const contador = () => {
     swal("Perfecto. Tenes en tu Carrito de Compra : " + count);
     addItem(productos, count);
-    // newStock(stockPrenda);
-    // totalPrice(productos,count);
   };
 
   return (

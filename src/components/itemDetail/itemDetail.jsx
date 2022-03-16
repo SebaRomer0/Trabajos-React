@@ -18,13 +18,13 @@ const ItemDetail = ({ detalle }) => {
   return (
     <div className="container-fluid fondo">
       <div className="row d-flex justify-content-center">
-        <div className="card text-center" style={{ width: 450 }}>
+        <div className="card text-center estilo__cart" style={{ width: 450 }}>
           {/* <img src={require(`../NavBar/imagen/indumentaria/${detalle.img}`)} className="card-img-top"/> */}
-          <div className="card-body">
+          <div className="card-body color__titulos">
             <h3>Nombre: {detalle.nombre}</h3>
             <h4>Precio: {detalle.precio}</h4>
             <p>Descripcion: {detalle.descripcion}</p>
-            <h4><ControlesDeLaCard stock={detalle.stock} productos={detalle} buy={detalle.precio}/></h4>
+            <h4><ControlesDeLaCard productos={detalle} buy={detalle.precio}/></h4>
             <button className="btn btn-primary btn-lg py-4 m-3" onClick={irCompraTerminada}>Ir al Carrito de Compra</button>
           </div>
           <div>

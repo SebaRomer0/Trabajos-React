@@ -47,16 +47,9 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  // Ver si lo elimino
-  const newStock = (stockPrenda) => {
-    setCart((prev) =>
-      prev.filter((element) => (element.item.stock = stockPrenda))
-    );
-  };
-
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clear, newStock, totalPrice, cartCantidad }}
+      value={{ cart, addItem, removeItem, clear, totalPrice, cartCantidad }}
     >
       {children}
     </CartContext.Provider>

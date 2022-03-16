@@ -20,3 +20,9 @@
 .color__titulos{
     color: white;
 }
+
+.estilo__cart{
+    background-color: #ffffff10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}

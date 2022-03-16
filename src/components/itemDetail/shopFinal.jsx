@@ -16,13 +16,18 @@ const ShopFinal = () => {
       .then((res) => setOrden({ id: res.id, ...res.data() }));
   }, [ordenId]);
 
+  
+
   return (
-      <div className="fondo color__titulos text-center">
-          <h1>Compra Finalizada</h1>
-          <h2>Gracias por su Compra: ,{orden.buyer.name}, </h2>
-          <h2>Enviaremos todos sus Datos de la Compra a su Email ,{orden.buyer.email}, de la Ciudad de ,{orden.buyer.city},</h2>
+      <div className="container-fluid fondo color__titulos text-center">
+        <div className="row d-flex justify-content-center">
+          <div className="card text-center estilo__cart color__titulos" style={{ width: 900, height:1110 }}>
+            <h1>Compra Finalizada</h1>
+            <h2>Gracias por su Compra: ,{orden?.buyer?.name}, </h2>
+            <h2>Enviaremos todos sus Datos de la Compra a su Email ,{orden?.buyer?.email}, de la Ciudad de ,{orden?.buyer?.city}</h2>
+          </div>
+        </div>
       </div>
-    
   );
 };
 
